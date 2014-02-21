@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Gulp"
+date: 2014-02-21 20:37:00
+categories: blog
+---
+
+There is a lot of talk on the net about [node][node] build tools. It seems like there is a new one out each week. The most popular at the moment seems to be [Grunt][grunt]. It changed the way I built my sites, and helped to speed up my development. Time has passed, and I'm changing to [Gulp][gulp].
+
+So why did I change? Well the main reason for me, was that it you configure it with JavaScript. No more long winded configuration files. It also had the benifit of allowing my to keep my code DRYer.
+
+If you're interested, there are plenty of great [tutorials][gulpTutorial] out there. So take a look, and shorten your development process!
+
+I've put together a [boilerplate][gulpBoilerplate] to help me kick off new projects. Hopefully it will be of use to more than just me.
+
+[node]:             http://nodejs.org/
+[grunt]:            http://gruntjs.com/
+[gulp]:             http://gulpjs.com/
+[gulpTutorial]:     http://travismaynard.com/writing/getting-started-with-gulp
+[gulpBoilerplate]:  https://github.com/Eruant/gulp-boilerplate
