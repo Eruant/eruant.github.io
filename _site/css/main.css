@@ -33,21 +33,50 @@ a:hover   { color: #66ccf7; }
 a:visited { color: #66ccf7; }
 
 aside {
-  width: 16%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: #3f4447;
-  text-align: right;
+  text-align: left;
   padding: 20px 2%;
 }
 
 main {
   padding: 20px 2%;
-  width: 76%;
-  margin-left: 20%;
   text-align: left;
+}
+
+.mbl {
+  display: block;
+}
+
+.mbl-inln {
+  display: inline;
+}
+
+.dskt {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  aside {
+    width: 16%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: right;
+  }
+
+  main {
+    width: 76%;
+    margin-left: 20%;
+  }
+  
+  .mbl, .mbl-inln {
+    display: none;
+  }
+
+  .dskt {
+    display: block;
+  }
 }
 
 footer {
