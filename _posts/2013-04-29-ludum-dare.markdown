@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Ludum Dare 26"
+date: 2013-04-29 18:00:00
+description: "My entry into Ludum Dare with the theme 'Minimalism'"
+categories: blog
+---
+
+So I entered anther [Ludum Dare][ludum], with the theme was 'Minimalism'. I decided to build a game I've had in mind for a while. It is base in the classic Amega game 'Atoms'. To make it more confusing for me, I thought I would do a hexagonal grid.
+
+Basically you try to take over the board by wiping out the opposing players.
+
+[Play the game][entry]
+
+[ludum]:  http://www.ludumdare.com/compo/
+[entry]:  http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&uid=14756
