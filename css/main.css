@@ -32,9 +32,9 @@ h2 a {
 }
 p { margin: 1em 0; }
 
-a         { color: #08c; }
-a:hover   { color: #66ccf7; }
-a:visited { color: #66ccf7; }
+a       { color: #66ccf7; }
+a:hover,
+a:active { color: #08c; }
 
 aside {
   background-color: #3f4447;
