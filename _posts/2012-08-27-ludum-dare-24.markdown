@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Ludum Dare 24"
+date: 2012-08-27 18:00:00
+categories: blog
+---
+
+My first entry into the [Ludum Dare][ludum] competition. It's a game competition when you have to build a game based on a theme within 48 hours. The theme was 'Evolution'. As this was my first entry, I was feeling a little daunted by the whole process, but I made it.
+
+Let me know what you think
+
+[Play the game][entry]
+
+[ludum]:  http://www.ludumdare.com/compo/
+[entry]:  http://www.ludumdare.com/compo/ludum-dare-24/?action=preview&uid=14756

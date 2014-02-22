@@ -2,7 +2,6 @@
 layout: post
 title: "One game per week"
 data: 2014-02-22 09:56:00
-description: "Getting inspired to build more games. Taking a look at some of the tools available."
 categories: blog
 ---
 

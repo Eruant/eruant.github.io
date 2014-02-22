@@ -10,9 +10,9 @@ title: pushing doors to see what will open
     <div class="post">
       <h2>
         <a href="{{ post.url }}">{{ post.title }}</a>
+        <span>{{ post.date | date_to_string }}</span>
       </h2>
-      <p>
-        <span>{{ post.date | date_to_string }}</span> | {{ post.description }}</p>
+      {{ post.excerpt }}
     </div>
     {% endfor %}
   </div>

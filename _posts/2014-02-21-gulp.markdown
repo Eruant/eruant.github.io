@@ -2,7 +2,6 @@
 layout: post
 title: "Gulp"
 date: 2014-02-21 20:37:00
-description: "A quick look at Node build tools, and why I'm changing to Gulp"
 categories: blog
 ---
 
