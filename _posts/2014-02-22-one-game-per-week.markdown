@@ -6,9 +6,9 @@ description: "Getting inspired to build more games. Taking a look at some of the
 categories: blog
 ---
 
-I'm being inspired. Before I took my current job, I was hungry for games. I entered [Ludum Dare][ludum] three times, and I thought I did quite well. My job is a curse and a blessing. I get to work on some amazing projects and with some top clients ([shame less plug][bynd]). Because I'm inspired at work, I get home and don't feel the need to build more games.
+I'm being inspired. Before I took my current job, I was hungry for games. I entered [Ludum Dare][ludum] three times, and I thought I did quite well. My job is a curse and a blessing. I get to work on some amazing projects and with some top clients ([shameless plug][bynd]). Because I'm inspired at work, I get home and don't feel the need to build more games.
 
-A couple of weeks ago I stumbled upon [LessMilk][milk]. It's a site built by a guy named Thomas. Basically he's building one game per week; that's quite full on. I know I've got a few games up my sleaves, but I'm not sure I could build one a week.
+A couple of weeks ago I stumbled upon [LessMilk][milk]. It's a site built by a guy named Thomas. Basically he's building one game per week; that's quite full on. I know I've got a few games up my sleeves, but I'm not sure I could build one a week.
 
 I like to spend some time planning my games, and working on the framework to hang them off. This inevitably takes time, and I don't always get round to completing them. I'm going to make a stronger effort to complete some games. Part of that effort is in blogging. I'm not going to build a game per week, but I'll try to blog at least once per week.
 
@@ -16,7 +16,7 @@ As fun as playing around building frameworks is, it's time I let someone else do
 
 From getting a grounding in [PIXI][pixi], I got introduced to a fully blown game engine called [Phaser][phaser]. I was happy to discover Thomas is also using it for his games. As a quick starting game I thought I would make a flappy bird clone, called [floppy fish][floppyfish]. It's work in progress, but I'm planning on actually finishing it.
 
-I've been working on my game for the past week or so, and Thomas must have read my mind, because he's just added a [tutorial][tutorial] to point me in the right direction. My code will be diffrent, for a start I'm using [browserify][browserify] to organise my code, but I think I'll leave that for another blog on organising code.
+I've been working on my game for the past week or so, and Thomas must have read my mind, because he's just added a [tutorial][tutorial] to point me in the right direction. My code will be different, for a start I'm using [browserify][browserify] to organise my code, but I think I'll leave that for another blog on organising code.
 
 [bynd]:       http://bynd.com/work/
 [milk]:       http://www.lessmilk.com/
