@@ -48,6 +48,10 @@ a:active { color: #08c; }
   padding: 20px 2%;
 }
 
+.title .ad {
+  display: none;
+}
+
 .main {
   padding: 20px 2%;
   text-align: left;
@@ -81,15 +85,24 @@ a:active { color: #08c; }
 
   .title {
     display: table-cell;
-    width: 16%;
+    width: 200px;
     height: 100%;
     text-align: right;
     z-index: 2;
+    padding: 20px 2%;
+  }
+
+  .title .ad {
+    display: inline-block;
+    width: 160px;
+    height: 600px;
+    margin-top: 20px;
+    text-align: right;
   }
 
   .main {
     display: table-cell
-    width: 76%;
+    /*width: 76%;*/
   }
 
   .main .article {
