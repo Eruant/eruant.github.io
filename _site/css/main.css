@@ -166,6 +166,7 @@ a:active { color: #08c; }
 /*****************************************************************************/
 
 /* standard */
+
 .post pre {
   border: 1px solid #5f6467;
   background-color: #3f4447;
@@ -195,4 +196,9 @@ a:active { color: #08c; }
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+.social {
+  margin-top: 20px;
+  text-align: right;
 }
