@@ -167,6 +167,15 @@ a:active { color: #08c; }
 
 /* standard */
 
+.post h2 {
+  padding-top: 20px;
+  font-size: 180%;
+}
+
+.post h3 {
+  font-size: 130%;
+}
+
 .post pre {
   border: 1px solid #5f6467;
   background-color: #3f4447;

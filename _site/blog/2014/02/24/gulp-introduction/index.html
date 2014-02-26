@@ -1,0 +1,176 @@
+<!doctype html>
+<head>
+  <meta http-equiv="content-type" content="text/html; carset=utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>littleball. | Gulp introduction</title>
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Acme|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24534226-1', 'littleball.co.uk');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+  <div class="title">
+    <h1>
+      <a href="/">littleball.</a>
+    </h1>
+    <p class="dskt">
+      Games, tools and other random bits and pieces.
+    </p>
+    <ul class="dskt social-nav">
+      <li><a href="https://github.com/Eruant">Github</a></li>
+      <li><a href="https://twitter.com/mrGale">Twitter</a></li>
+    </ul>
+
+    <div class="ad">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Skyscraper -->
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:160px;height:600px"
+           data-ad-client="ca-pub-9210472847417908"
+           data-ad-slot="7383868672"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <div class="main">
+    <div class="article">
+      <h2>Gulp introduction</h2>
+<p class="meta">24 Feb 2014</p>
+
+<div class="social">
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_google_plusone_share"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e2ce4f0add46e3"></script>
+  <!-- AddThis Button END -->
+</div>
+
+<div class="post">
+<p><a href="http://gulpjs.com/">Gulp</a> is a task running, that is useful for automating development tasks. In this article I will cover an introduction to using it, and why.</p>
+
+<h2>Grunt vs Gulp</h2>
+
+<p>Both <a href="http://gruntjs.com/">Grunt</a> and <a href="http://gulpjs.com/">Gulp</a> are task runners build in <a href="http://nodejs.org/">node</a>. Both are well supported, and have a large number of plugins.</p>
+
+<p>Grunt pros:</p>
+
+<ul>
+<li>largest number of plugins</li>
+</ul>
+
+<p>Gulp pros:</p>
+
+<ul>
+<li>very quick</li>
+<li>set up is done via a script</li>
+</ul>
+
+<p>There isnt&#39; much to separate the two, but for me Gulp wins hands down. Why, well although Grunt has more plugins, the development comminity have already translated the majority of plugins, and they have even created one that will also run Grunt tasks.</p>
+
+<p>The speed at which Gulp runs means that you spend less time waiting for your site to be updated. Great for those little changes that you want to see instantly.</p>
+
+<p>The main advantage for me is the ability to use a scrpit to configure it. You can set it up the way you want it set up</p>
+
+<ul>
+<li>add custom logs</li>
+<li>split the commands into multiple files</li>
+<li>re-use code (DRY)</li>
+</ul>
+
+<h2>Installation</h2>
+
+<p>Installation is really simple, as long as you have <a href="http://nodejs.org/">node</a> installed.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">npm install -g gulp
+</code></pre></div>
+<h2>Setup</h2>
+
+<p>Gulp setup can change from project to project, but the folling set up should cover the basics</p>
+
+<h3>New projects</h3>
+
+<p>Add a file called <code>package.json</code> with a field for <code>devDependencies</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;name&quot;: &quot;my-new-project&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;devDependencies&quot;: {
+  }
+}
+</code></pre></div>
+<p>To add gulp or any gulp plugins just run the following command.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">npm install --save-dev gulp
+</code></pre></div>
+<p>Using the tag <code>--save-dev</code> will add this dependency to the package file, so that other developers can set up their copys of the repository the same as you.</p>
+
+<h3>Existing projects</h3>
+
+<p>It should be quick and easy setting up a new project, just run the following command:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">npm install
+</code></pre></div>
+<h2>Gulpfile.js</h2>
+
+<p>Each project is controlled by a file named <code>gulpfile.js</code>. Here is a really simple file.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">taks</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Running the default command&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Once you&#39;ve added the file running <code>gulp</code> will run this file. If you send in a command, it will look for it and run it. Otherwise it will look for a <code>default</code> task and run that. In the case above you would see &quot;Running the default command&quot; appear in the command line.</p>
+
+<h2>Plugins</h2>
+
+<p>This is where the main power of Gulp lies. Here are the plugins I&#39;ve found most useful</p>
+
+<ul>
+<li><a href="https://github.com/appleboy/gulp-compass"><code>gulp-compass</code></a> - converts <code>.scss</code> files to <code>.css</code> files</li>
+<li><a href="https://github.com/wearefractal/gulp-concat"><code>gulp-concat</code></a> - copies multiple files into a single file</li>
+<li><a href="https://github.com/sindresorhus/gulp-imagemin"><code>gulp-imagemin</code></a> - compresses images (make sure they get copied to another folder, so that you can keep originals)</li>
+<li><a href="https://github.com/wearefractal/gulp-jshint"><code>gulp-jshint</code></a> - alerts you to errors in your code</li>
+<li><a href="https://github.com/jonathanepollack/gulp-minify-html"><code>gulp-minify-html</code></a> - compresses your markup and removes comments</li>
+<li><a href="https://github.com/terinjokes/gulp-uglify"><code>gulp-uglify</code></a> - compresses JavaScript</li>
+</ul>
+
+<p>Other plugins that I like</p>
+
+<ul>
+<li><a href="https://github.com/stevelacy/gulp-git"><code>gulp-git</code></a> - auto run <code>git</code> commands, such as branching and merging or pushing to server</li>
+<li><a href="https://github.com/deepak1556/gulp-browserify"><code>gulp-browserify</code></a> - write your JavaScript with CommonJS module format</li>
+<li><a href="https://github.com/stevelacy/gulp-bump"><code>gulp-bump</code></a> - updates the version number in the package file (useful with the git push)</li>
+<li><a href="https://github.com/sindresorhus/gulp-jasmine"><code>gulp-jasmine</code></a> - run tests on your JavaScript</li>
+</ul>
+
+</div>
+
+    </div>
+    <div class="footer">
+      <p>
+        <span class="mbl-inln">
+          <a href="https://github.com/Eruant">Github</a> |
+          <a href="https://twitter.com/mrGale">Twitter</a> |
+        </span>
+        &copy; littleball. 2011-2014
+      </p>
+    </div>
+  </div>
+</body>
+</html>
