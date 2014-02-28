@@ -9,6 +9,8 @@ I've always been interested in building games, and I've made a few quick ones fo
 
 There are lots of tutorials out there, and they are great for learning the basics. One thing I've noticed is that while they are great for demonstrating the simple games; for production games you may want to organise your code a little better.
 
+## Get set up
+
 To organise my code I'm using [browserify][browserify] to split my code into modules. I've mentioned in a previous post that I'm using [gulp][gulp] to manage tasks like compiling my code, so here is how I've set that up
 
 {% highlight javascript %}
@@ -52,6 +54,8 @@ Then update your `package.json` to configure what scripts to run
 
 This then adds and repositories in the `napa` object to your node modules folder. So that you can install them with `npm install`. You'll notice I found a [repository][bowerPhaser] with a node friendly copy of Phaser.
 
+## Starting the game
+
 Back to the `base.js` file we can now kick off our [Phaser Game][phaser]
 
 {% highlight javascript %}
@@ -66,6 +70,8 @@ In the second line we add a scene called boot, which is loaded as a node module.
 
 The last line sets Phaser to start the boot scene.
 
+## Setting the scene
+
 Scenes are a great way of splitting up code into different views. I like to work with the following scenes
 
 - boot
@@ -74,6 +80,12 @@ Scenes are a great way of splitting up code into different views. I like to work
 - level
 
 I use boot to load any files for the pre-loader (as little as possible, so that the user doesn't see a black screen for ages). It also useful for setting things like how many pointers (mouse or fingers) to detect, pausing the game if it looses focus or scaling the canvas.
+
+The preload scene shows a loading bar while the user waits for all of the assets to load. You should keep the number of assets down, so that this page isn't seen for long.
+
+The main menu is the first place where users can interact with the game. It can be as simple as 'click anywhere to start'.
+
+The last on the list is the level scene. I'm still working on the naming of this file as it could be called game, level1, mainGame, newGame etc. It's where the core of your game sits.
 
 [ludum]:        http://www.ludumdare.com/compo/author/littleball/
 [phaser]:       http://phaser.io/
