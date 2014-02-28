@@ -87,6 +87,26 @@ The main menu is the first place where users can interact with the game. It can 
 
 The last on the list is the level scene. I'm still working on the naming of this file as it could be called game, level1, mainGame, newGame etc. It's where the core of your game sits.
 
+## Inside a scene
+
+Let's take a look inside an example scene
+
+{% highlight javascript %}
+module.exports = {
+  preload: function () {
+    // load things
+  },
+  create: function () {
+    // initiate things
+  },
+  update: function () {
+    // animate things
+  }
+};
+{% endhighlight %}
+
+The three main functions Phaser looks for are `preload`, `create` and `update`. They are optional, so you won't see them in every scene.
+
 [ludum]:        http://www.ludumdare.com/compo/author/littleball/
 [phaser]:       http://phaser.io/
 [browserify]:   http://browserify.org/
