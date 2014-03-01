@@ -46,6 +46,7 @@ a:active { color: #08c; }
   background-color: #3f4447;
   text-align: left;
   padding: 20px 2%;
+  min-width: 200px;
 }
 
 .title .ad {
@@ -210,4 +211,26 @@ a:active { color: #08c; }
 .social {
   margin-top: 20px;
   text-align: right;
+}
+
+.pagination a, 
+.pagination span {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.pagination a {
+  background: #66ccf7;
+  color: #333;
+  text-decoration: none;
+}
+
+.pagination a:hover,
+.pagination a:active {
+  background: #08c;
+}
+
+.pagination span {
+  background: #3f4447;
+  color: #66ccf7;
 }
