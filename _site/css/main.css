@@ -78,7 +78,7 @@ a:active { color: #08c; }
 
 .footer p { margin: 20px; }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
 
   body {
     display: table;
@@ -108,6 +108,7 @@ a:active { color: #08c; }
 
   .main .article {
     max-width: 800px;
+    min-width: 550px;
   }
 
   .footer {
