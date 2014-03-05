@@ -19,15 +19,12 @@
         href = item.getAttribute("href");
 
         if (href && href.search(/^(https?:\/\/)/) === 0) {
-          item.onclick = this.openInNewWindow;
+          //item.onclick = this.openInNewWindow;
+          item.target = "_blank";
         }
       }
-    },
-
-    openInNewWindow: function (event) {
-      event.preventDefault();
-      window.open(event.target.getAttribute("href"));
     }
+
   };
 
   win.onload = function () {
