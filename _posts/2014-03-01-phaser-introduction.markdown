@@ -11,6 +11,8 @@ There are lots of tutorials out there, and they are great for learning the basic
 
 In this article I will look at creating a boilerplate set of code that you can use as a starting point for building your games. I've put the files up on [Github][boilerplate], so that you can always fork the code and start creating your own games. I will update the boilerplate code as I develope new games, and find better solutions.
 
+If you're not familiar with Gulp, check out my [previous post][gulpPost].
+
 ## Get set up
 
 To organise my code I'm using [browserify][browserify] to split my code into modules. I've mentioned in a previous post that I'm using [gulp][gulp] to manage tasks like compiling my code, so here is how I've set that up
@@ -258,6 +260,7 @@ Probably the best place to go now is the [Phaser examples][examples] page. There
 [ludum]:        http://www.ludumdare.com/compo/author/littleball/
 [phaser]:       http://phaser.io/
 [boilerplate]:  https://github.com/Eruant/phaser-boilerplate
+[gulpPost]:     /blog/2014/02/24/gulp-introduction/
 [browserify]:   http://browserify.org/
 [gulp]:         http://gulpjs.com/
 [napa]:         https://github.com/shama/napa
