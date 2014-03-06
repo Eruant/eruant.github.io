@@ -1,0 +1,257 @@
+<!doctype html>
+<head>
+  <meta http-equiv="content-type" content="text/html; carset=utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta description="Littleball is a place for games and game development. Aimed directly at the web and what it can deliver.">
+
+  <title>Time to document</title>
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Acme|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24534226-1', 'littleball.co.uk');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+  <div class="title">
+    <h1>
+      <a href="/">littleball.</a>
+    </h1>
+    <p class="dskt">
+      Games, tools and other random bits and pieces.
+    </p>
+    <ul class="dskt social-nav">
+      <li><a href="https://github.com/Eruant">Github</a></li>
+      <li><a href="https://twitter.com/mrGale">Twitter</a></li>
+    </ul>
+
+    <div class="ad">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Skyscraper -->
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:160px;height:600px"
+           data-ad-client="ca-pub-9210472847417908"
+           data-ad-slot="7383868672"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <div class="main">
+    <div class="article">
+      <h2>Time to document</h2>
+<p class="meta">06 Mar 2014</p>
+
+<div class="social">
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_google_plusone_share"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e2ce4f0add46e3"></script>
+  <!-- AddThis Button END -->
+</div>
+
+<div class="post">
+<p>It&#39;s very easy to get carried away writing code without making any notes about it. Have you ever come back to code and gone &quot;what did that do?&quot;. Creating documentation shouldn&#39;t be hard. We will take a look at <a href="https://github.com/senchalabs/jsduck">JSDuck</a> a tool for generating documentation for you.</p>
+
+<p>Writing good documentation can take a long time, and so lots of us don&#39;t bother. At the very least you should be adding comments to your code, so that you will understand it six months later. Even better would be to make some documentation, so that other developers can understand what should be happening.</p>
+
+<p>Even if you don&#39;t plan on making documentation today, six months down the line you may have changed your mind. Do you want to go back and re-edit all of your code?</p>
+
+<h2>Adding documentation to your code</h2>
+
+<p>There are many tools out there for compiling your documentation. The one I will be coving in this article is called <a href="https://github.com/senchalabs/jsduck">JSDuck</a>. First things first we need some files to document. Here is an example class for a player call <code>Person.js</code>.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;Hi I&#39;m &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">renamePerson</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">oldName</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">newName</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">oldName</span> <span class="o">+</span> <span class="s2">&quot; has changed their name to &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Currently this file will not produce very good documentation, so lets change that by adding some comments at the top of the file.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="cm">/**</span>
+<span class="cm"> * @class Person</span>
+<span class="cm"> * A human being in code form.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author Matt Gale &lt;matt@littleball.co.uk&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * Usage:</span>
+<span class="cm"> *     var Person = require(&#39;./Person&#39;);</span>
+<span class="cm"> *</span>
+<span class="cm"> *     var bob = new Person(&#39;Bob&#39;);</span>
+<span class="cm"> *     bob.sayHello(); // output -&gt; &quot;Hi I&#39;m Bob!&quot;</span>
+<span class="cm"> *</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * Creates a new Person instance</span>
+<span class="cm"> * @param {String} name The name of the person</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>Now the first thing you will notice is that all the code is wrapped in a comment. This is important because you don&#39;t want to change the way the code executes.</p>
+
+<p>Each command we want JSDuck to take note of starts with an <code>@</code> sign. The first one we have added is <code>@class</code>. It lets the documentation know what the class name is. It&#39;s strickly not needed, as JSDuck tries to work out as much of it as possible automatically. I like to add it to be 100% clear. I&#39;ve also added some text to explain this module, and how to use it. To make things easier, the JSDuck lets you use markdown to edit your code.</p>
+
+<p>The Author tag (<code>@author</code>) lets you know who created the file. This won&#39;t be added to the documentation, but it can be useful in case you want to get more information on why things are added the way that they have been.</p>
+
+<p>This module has a constructor method so you can call <code>var bob = new Person(&quot;Bob&quot;);</code>. To mark this use the <code>@constructor</code> tag, followed by a description of what the constructor does.</p>
+
+<p>The parameter tag is used for each variable sent into the method or constructor. I&#39;ve added all the information onto one line, which uses the following format: <code>@param &lt;type&gt; &lt;name&gt; &lt;description&gt;</code>.</p>
+
+<p>Adding a documentation to a method is very similar to the constructor. Let&#39;s look at how we would document the <code>sayHello</code> method.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="cm">/**</span>
+<span class="cm"> * @method sayHello</span>
+<span class="cm"> * Returns a personal greeting from this person</span>
+<span class="cm"> *</span>
+<span class="cm"> * @return {String} Personal Greeting</span>
+<span class="cm"> */</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;Hi I\&#39;m &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>You&#39;ll notice a new option displayed here, which is the return value. It&#39;s format is similar to the parameters.</p>
+
+<p>If you want JSDuck to ignore any parts of your code, you can let it know with the <code>@ignore</code> tag.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="cm">/**</span>
+<span class="cm"> * @ignore</span>
+<span class="cm"> * Exporting the module (the class has already been documented above)</span>
+<span class="cm"> */</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">;</span>
+</code></pre></div>
+
+<h2>Creating the documentation</h2>
+
+<p>So you&#39;ve added comments to your files, now it&#39;s time to generate your documentation.</p>
+
+<p>First things first you need to install JSDuck. If you have ruby on your machine you can install it with the following command.</p>
+
+<div class="highlight"><pre><code class="bash"><span class="o">[</span>sudo<span class="o">]</span> gem install jsduck
+</code></pre></div>
+
+<p>Once that is done, you can generate your documentation by sending in your source directory. I also specify the output directory with into a folder called docs.</p>
+
+<div class="highlight"><pre><code class="bash">jsduck src/js src/js --output docs
+</code></pre></div>
+
+<p>Now if you look in your docs folder, you should see lots of files. Open the <code>index.html</code> file in your browser to see the documentation.</p>
+
+<p>I also like to name my documentation by adding the name option: <code>--title &quot;My project&quot;</code>.</p>
+
+<h2>Guides</h2>
+
+<p>Sometimes documentation isn&#39;t enough; you need to let the developer know extra information. This is where guides comes in.</p>
+
+<p>First of all we need a configuration file names <code>guides.json</code>. I&#39;ve put it in my src directory.</p>
+
+<div class="highlight"><pre><code class="json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;My project name&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;getting_started&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;guides/getting_started&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Getting started&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Getting up to speed with the project&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>It&#39;s a simple file, that gives the guide a name, and a number of items (guides). I&#39;ve stored each guide in a folder called guides. Here is my folder structure.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">src</span><span class="o">/</span>
+  <span class="nx">guides</span><span class="p">.</span><span class="nx">json</span>
+  <span class="nx">guides</span><span class="o">/</span>
+    <span class="nx">getting_started</span><span class="o">/</span>
+    <span class="nx">README</span><span class="p">.</span><span class="nx">md</span>
+    <span class="nx">icon</span><span class="p">.</span><span class="nx">png</span>
+    <span class="nx">some</span><span class="o">-</span><span class="nx">image</span><span class="p">.</span><span class="nx">png</span>
+  <span class="nx">js</span><span class="o">/</span>
+    <span class="nx">classes</span><span class="o">/</span>
+      <span class="nx">Person</span><span class="p">.</span><span class="nx">js</span>
+      <span class="nx">Enemy</span><span class="p">.</span><span class="nx">js</span>
+</code></pre></div>
+
+<p>You will notice that each guide has it&#39;s own folder with a <code>README.md</code> file inside. I&#39;ve also added an <code>icon.png</code> file.</p>
+
+<p>The <code>README.md</code> file contains the actual guide, written with markdown. For information see the <a href="https://github.com/senchalabs/jsduck/wiki/Guides#wiki-formatting">official documentation</a>.</p>
+
+<p>By default a guide has an image icon, but you can override this like I have by adding an <code>icon.png</code> file.</p>
+
+<p>You can also add any other resource to this folder, such as images. Then link them with <code>{@img some-image.png Alt text}</code></p>
+
+<p>The last step is to run the build command with a <code>--guides</code> option.</p>
+
+<div class="highlight"><pre><code class="bash">jsduck src/js/ --title <span class="s2">&quot;My project&quot;</span> --guides src/guides.json --output docs
+</code></pre></div>
+
+<p>All of this may seem like a lot of work the first time you do it, but for me it&#39;s become part of the development process. The more you do it, the easier it becomes. In six months, you may be thankful for it.</p>
+
+</div>
+
+<div class="ad-post">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- End of Article -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9210472847417908"
+       data-ad-slot="1040480270"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+    </div>
+    <div class="footer">
+      <p>
+        <span class="mbl-inln">
+          <a href="https://github.com/Eruant">Github</a> |
+          <a href="https://twitter.com/mrGale">Twitter</a> |
+        </span>
+        &copy; littleball. 2011-2014
+      </p>
+    </div>
+  </div>
+  <script src="/js/main.js"></script>
+</body>
+</html>

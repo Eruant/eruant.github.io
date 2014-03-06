@@ -1,15 +1,13 @@
 ---
 layout: post
 title: "Time to document"
-date: 2014-03-02 16:32:00
+date: 2014-03-06 13:00:00
 categories: blog
 ---
 
-It's very easy to get carried away writing code without making any notes about it. Have you ever come back to code and gone "what did that do?".
+It's very easy to get carried away writing code without making any notes about it. Have you ever come back to code and gone "what did that do?". Creating documentation shouldn't be hard. We will take a look at [JSDuck][jsduck] a tool for generating documentation for you.
 
-At the very least you should be adding comments to your code, so that you will understand it six months later. Even better would be to make some documentation, so that other developers can understand what should be happening.
-
-Writing good documentation can take a long time, and so lots of us don't bother. Getting that documentation generated for you is a good solution, so in this article I will introduce you to auto-generated documentation.
+Writing good documentation can take a long time, and so lots of us don't bother. At the very least you should be adding comments to your code, so that you will understand it six months later. Even better would be to make some documentation, so that other developers can understand what should be happening.
 
 Even if you don't plan on making documentation today, six months down the line you may have changed your mind. Do you want to go back and re-edit all of your code?
 
@@ -123,4 +121,59 @@ Now if you look in your docs folder, you should see lots of files. Open the `ind
 
 I also like to name my documentation by adding the name option: `--title "My project"`.
 
+## Guides
+
+Sometimes documentation isn't enough; you need to let the developer know extra information. This is where guides comes in.
+
+First of all we need a configuration file names `guides.json`. I've put it in my src directory.
+
+{% highlight json %}
+[
+  {
+    "title": "My project name",
+    "items": [
+      {
+        "name": "getting_started",
+        "url": "guides/getting_started",
+        "title": "Getting started",
+        "description": "Getting up to speed with the project"
+      }
+    ]
+  }
+]
+{% endhighlight %}
+
+It's a simple file, that gives the guide a name, and a number of items (guides). I've stored each guide in a folder called guides. Here is my folder structure.
+
+{% highlight javascript %}
+src/
+  guides.json
+  guides/
+    getting_started/
+    README.md
+    icon.png
+    some-image.png
+  js/
+    classes/
+      Person.js
+      Enemy.js
+{% endhighlight %}
+
+You will notice that each guide has it's own folder with a `README.md` file inside. I've also added an `icon.png` file.
+
+The `README.md` file contains the actual guide, written with markdown. For information see the [official documentation][guidelines].
+
+By default a guide has an image icon, but you can override this like I have by adding an `icon.png` file.
+
+You can also add any other resource to this folder, such as images. Then link them with `{@img some-image.png Alt text}`
+
+The last step is to run the build command with a `--guides` option.
+
+{% highlight bash %}
+jsduck src/js/ --title "My project" --guides src/guides.json --output docs
+{% endhighlight %}
+
+All of this may seem like a lot of work the first time you do it, but for me it's become part of the development process. The more you do it, the easier it becomes. In six months, you may be thankful for it.
+
 [jsduck]:       https://github.com/senchalabs/jsduck
+[guidelines]:   https://github.com/senchalabs/jsduck/wiki/Guides#wiki-formatting
