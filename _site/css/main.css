@@ -236,3 +236,7 @@ a:active { color: #08c; }
   background: #3f4447;
   color: #66ccf7;
 }
+
+.ad-post {
+  margin-top: 40px;
+}
