@@ -3,6 +3,9 @@ layout: post
 title: "Phaser Introduction"
 date: 2014-03-01 11:45:00
 categories: blog
+tags:
+  - development
+  - phaser
 ---
 
 I've always been interested in building games, and I've made a few quick ones for [Ludum Dare][ludum]. Previously I've made them using raw JavaScript, without any libraries. I've learn alot doing it this way, but it's time to get a helping hand. I'm trying out a game engine called [Phaser][phaser].

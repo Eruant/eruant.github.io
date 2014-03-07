@@ -3,6 +3,9 @@ layout: post
 title: "Ludum Dare 24"
 date: 2012-08-27 18:00:00
 categories: blog
+tags:
+  - games
+  - ludumdare
 ---
 
 My first entry into the [Ludum Dare][ludum] competition. It's a game competition when you have to build a game based on a theme within 48 hours. The theme was 'Evolution'. As this was my first entry, I was feeling a little daunted by the whole process, but I made it.

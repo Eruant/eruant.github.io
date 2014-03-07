@@ -3,6 +3,9 @@ layout: post
 title: "Ludum Dare 25"
 date: 2012-12-17 18:00:00
 categories: blog
+tags:
+  - games
+  - ludumdare
 ---
 
 After the warm up weekend I felt more prepared to build a game that the first [Ludum Dare][ludum] competition. The theme was 'You are the Villain', but it was nearly the 'end of the world' (due to the Mayan calendar ending). I took both themes on to spice it up.

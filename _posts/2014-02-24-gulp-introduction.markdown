@@ -3,6 +3,9 @@ layout: post
 title: "Gulp introduction"
 date: 2014-02-24 13:00:00
 categories: blog
+tags:
+  - development
+  - task-runner
 ---
 
 [Gulp][gulp] is a task running, that is useful for automating development tasks. In this article I will cover an introduction to using it, and why.

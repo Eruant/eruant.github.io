@@ -3,6 +3,8 @@ layout: post
 title: "Time to document"
 date: 2014-03-06 13:00:00
 categories: blog
+tags:
+  - development
 ---
 
 It's very easy to get carried away writing code without making any notes about it. Have you ever come back to code and gone "what did that do?". Creating documentation shouldn't be hard. We will take a look at [JSDuck][jsduck] a tool for generating documentation for you.

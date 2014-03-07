@@ -3,6 +3,9 @@ layout: post
 title: "Ludum Dare 26"
 date: 2013-04-29 18:00:00
 categories: blog
+tags:
+  - games
+  - ludumdare
 ---
 
 So I entered anther [Ludum Dare][ludum], with the theme was 'Minimalism'. I decided to build a game I've had in mind for a while. It is base in the classic Amega game 'Atoms'. To make it more confusing for me, I thought I would do a hexagonal grid.
