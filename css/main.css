@@ -215,6 +215,10 @@ a:active { color: #08c; }
   text-align: right;
 }
 
+.pagination h2 {
+  padding: 20px 0;
+}
+
 .pagination a, 
 .pagination span {
   display: inline-block;

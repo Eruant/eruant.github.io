@@ -22,6 +22,19 @@ layout: default
 {{ content }}
 </div>
 
+<div class="pagination">
+  <h2>More Articles</h2>
+  {% if page.previous.url %}
+  <a href="{{ page.previous.url }}">Previous: {{ page.previous.title}}</a>
+  {% endif %}
+
+  <a href="#top">Back to top</a>
+
+  {% if page.next.url %}
+  <a href="{{ page.next.url }}">Next: {{ page.next.title }}</a>
+  {% endif %}
+</div>
+
 <div class="ad-post">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- End of Article -->
