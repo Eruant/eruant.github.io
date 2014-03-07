@@ -178,6 +178,11 @@ a:active { color: #08c; }
   font-size: 130%;
 }
 
+.article .meta span {
+  color: #aaa;
+  text-transform: Capitalize;
+}
+
 .post pre {
   border: 1px solid #5f6467;
   background-color: #3f4447;
