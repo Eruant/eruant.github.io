@@ -190,6 +190,11 @@ a:active { color: #08c; }
   overflow-x: scroll;
 }
 
+.post blockquote {
+  border-left: 3px solid #66ccf7;
+  padding-left: 20px;
+}
+
 .post ul, .post ol {
   margin-left: 1.35em;
 }
