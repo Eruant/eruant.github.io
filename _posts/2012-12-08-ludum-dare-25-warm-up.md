@@ -3,6 +3,7 @@ layout: post
 title: "Ludum Dare 25 - warm up"
 date: 2012-12-08 18:00:00
 categories: blog
+description: "My warm up entry into Ludum Dare. This experiment was testing particle emitters."
 tags:
   - demos
   - ludumdare
