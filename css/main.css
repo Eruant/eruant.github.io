@@ -4,6 +4,38 @@
 /*
 /*****************************************************************************/
 
+@font-face {
+  font-family: 'icomoon';
+  src:url('/fonts/icomoon.eot?-f1qmxk');
+  src:url('/fonts/icomoon.eot?#iefix-f1qmxk') format('embedded-opentype'),
+    url('/fonts/icomoon.woff?-f1qmxk') format('woff'),
+    url('/fonts/icomoon.ttf?-f1qmxk') format('truetype'),
+    url('/fonts/icomoon.svg?-f1qmxk#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+  content: "\e600";
+}
+.icon-github:before {
+  content: "\e601";
+}
+
 /* Global Reset */
 * {
   margin: 0;
@@ -124,19 +156,42 @@ a:active { color: #08c; }
     display: block;
   }
 }
+
+.main-nav,
 .social-nav {
   list-style: none;
+  display: inline;
+  border-right: solid 1px #ccc;
+  padding-right: 5px;
+  margin-right: 5px;
 }
 
-.social-nav li {
+.main-nav li {
   display: inline;
   border-right: solid 1px #ccc;
   padding: 0 5px;
 }
 
+.main-nav li:last-child,
 .social-nav li:last-child {
   border-right: none;
   padding-right: 0px;
+}
+
+.social-nav li {
+  position: relative;
+  display: inline;
+  padding: 0 0 0 5px;
+  font-size: 120%;
+}
+
+.social-nav li i {
+  position: relative;
+  top: 2px;
+}
+
+.social-nav li a {
+  text-decoration: none;
 }
 
 /*****************************************************************************/
