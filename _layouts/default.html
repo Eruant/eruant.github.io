@@ -31,17 +31,13 @@
     <h1>
       <a href="/">{{ site.name }}</a>
     </h1>
+    <a id="menuToggle" class="menu-toggle mbl"><i class="icon-menu"></i></a>
     <p class="dskt">
       Games, tools and other random bits and pieces.
     </p>
-    <ul class="main-nav">
-      <li><a href="/about">About</a></li>
-      <li><a href="/games">Games</a></li>
-    </ul>
-    <ul class="social-nav">
-      <li><a href="https://github.com/Eruant"><i class="icon-github"></i></a></li>
-      <li><a href="https://twitter.com/mrGale"><i class="icon-twitter"></i></a></li>
-    </ul>
+    <div class="desktop-nav dskt">
+      {% include nav.html %}
+    </div>
 
     <div class="ad">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -55,6 +51,11 @@
       </script>
     </div>
   </div>
+
+  <div class="mobile-nav mbl" id="nav">
+    {% include nav.html %}
+  </div>
+
   <div class="main">
     <div class="article">
       {{ content }}

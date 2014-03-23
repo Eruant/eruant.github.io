@@ -4,6 +4,8 @@
 
     init: function () {
       this.setExternalLinks();
+
+      doc.getElementById('menuToggle').onmousedown = this.toggleMenu;
     },
 
     setExternalLinks: function () {
@@ -14,7 +16,7 @@
       var items, item, href, i, il;
 
       items = doc.getElementsByTagName('a');
-      for (i = 0, iL = items.length; i < iL; i++) {
+      for (i = 0, il = items.length; i < il; i++) {
         item = items[i];
         href = item.getAttribute("href");
 
@@ -22,6 +24,18 @@
           //item.onclick = this.openInNewWindow;
           item.target = "_blank";
         }
+      }
+    },
+
+    toggleMenu: function () {
+      var nav = doc.getElementById('nav');
+
+      if (nav.className.match(/(?:^|\s)active(?!\S)/)) {
+        // remove class
+        nav.className = nav.className.replace(/(?:^|\s)active(?!\S)/g, '');
+      } else {
+        // add class
+        nav.className += " active";
       }
     }
 
