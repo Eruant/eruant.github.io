@@ -145,6 +145,7 @@ ul.nav {
 .nav li {
   background-color: #66ccf7;
   border-bottom: solid 1px #3f4447;
+  padding: 5px 0;
 }
 
 .nav li:hover,
@@ -174,6 +175,7 @@ ul.nav {
   .nav li {
     border-bottom: solid 1px #fff;
     background-color: transparent;
+    padding: 0;
   }
 
   .nav li a {
