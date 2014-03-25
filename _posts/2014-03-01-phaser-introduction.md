@@ -3,6 +3,7 @@ layout: post
 title: "Phaser Introduction"
 date: 2014-03-01 11:45:00
 categories: blog
+description: "An introduction to the Phaser framework"
 tags:
   - development
   - phaser

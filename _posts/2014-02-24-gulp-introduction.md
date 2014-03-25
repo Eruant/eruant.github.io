@@ -3,6 +3,7 @@ layout: post
 title: "Gulp introduction"
 date: 2014-02-24 13:00:00
 categories: blog
+description: "An introduction to Gulp, the why and how."
 tags:
   - development
   - task-runner

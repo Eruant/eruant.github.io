@@ -3,6 +3,7 @@ layout: post
 title: "Time to document"
 date: 2014-03-06 13:00:00
 categories: blog
+description: "Documenting your code, and using script to generate usable documentation"
 tags:
   - development
 ---

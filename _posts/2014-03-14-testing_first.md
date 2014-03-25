@@ -3,6 +3,7 @@ layout: post
 title: "Testing first"
 date: 2014-03-14 21:20:00
 categories: blog
+description: "Adding tests to your code, changing the way you develop."
 tags:
  - developments
  - mocha

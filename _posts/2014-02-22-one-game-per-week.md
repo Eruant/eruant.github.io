@@ -3,6 +3,9 @@ layout: post
 title: "One game per week"
 data: 2014-02-22 09:56:00
 categories: blog
+description: "Getting myself inspired and ready to blog more and build more games"
+tags:
+  - development
 ---
 
 I'm being inspired. Before I took my current job, I was hungry for games. I entered [Ludum Dare][ludum] three times, and I thought I did quite well. My job is a curse and a blessing. I get to work on some amazing projects and with some top clients ([shameless plug][bynd]). Because I'm inspired at work, I get home and don't feel the need to build more games.

@@ -3,6 +3,7 @@ layout: post
 title: "Mini Ludum Dare 50 announced"
 date: 2014-03-09 09:05:00
 categories: blog
+description: "Announcing the warm-up weekend for Ludum Dare"
 tags:
   - ludumdare
 ---
