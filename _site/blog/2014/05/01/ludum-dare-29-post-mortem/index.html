@@ -4,13 +4,13 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta description="Littleball is a place for games and game development. Aimed directly at the web and what it can deliver.">
 
-  <title>Ludum Dare 29</title>
+  <title>Ludum Dare 29 Post Mortem</title>
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/main.css">
   <link href='http://fonts.googleapis.com/css?family=Acme|Open+Sans' rel='stylesheet' type='text/css'>
 
-  <meta property="og:title" content="Ludum Dare 29" />
-  <meta property="og:url" content="http://littleball.co.uk/blog/2014/04/29/ludum-dare-29/" />
+  <meta property="og:title" content="Ludum Dare 29 Post Mortem" />
+  <meta property="og:url" content="http://littleball.co.uk/blog/2014/05/01/ludum-dare-29-post-mortem/" />
   <meta property="og:site_name" content="littleball." />
 
   <script>
@@ -86,13 +86,11 @@
 
   <div class="main">
     <div class="article">
-      <h2>Ludum Dare 29</h2>
+      <h2>Ludum Dare 29 Post Mortem</h2>
 <p class="meta">
-  29 Apr 2014
+  01 May 2014
   
-    | <span>games</span>
-  
-    | <span>ludumdare</span>
+    | <span>ludum dare</span>
   
 </p>
 
@@ -113,13 +111,35 @@
 </div>
 
 <div class="post">
-<p>This has been my best <a href="http://www.ludumdare.com/compo/">Ludum Dare</a> so far. I&#39;ve used <a href="http://phaser.io/">Phaser</a> to create a nice little platformer.</p>
+<p>What a weekend! <a href="http://www.ludumdare.com/compo/">Ludum Dare</a> is always full on, but I never seem to remember it weeks down the line. My <a href="http://www.ludumdare.com/compo/ludum-dare-29/?action=preview&amp;uid=14756">entry</a> went quite well, but I bit off slightly more than I could chew. I build an underwater platformer called &quot;Aqua&quot;, based on the theme &quot;Beneath the surface&quot;.</p>
 
-<p>You take control of an octopus, who is on the search for treasure. You have to open gates on your way using keys lying around.</p>
+<h2>What went well</h2>
 
-<p>I feel quite pleased about the game, it&#39;s a step up from what I&#39;ve done before. There were a few things I would have like to have done better, such as adding enemies, or some form of AI. I think I did well for 48 hours.</p>
+<p>I finished a playable game. I always like to have a finished game, it annoys me when you get half way through something good and it just stops.</p>
 
-<p>I&#39;ll do a follow up post to explain more, and let you know about the reaction I got.</p>
+<p><a href="http://phaser.io/">Phaser</a> definitely helped speed up my game development, as it took care of the physics and collision detection. Previously I had written everything from scratch. Writing it from scratch had taught me a lot, but now that I have the knowledge I don&#39;t feel like I have to do it any time soon.</p>
+
+<p><a href="http://browserify.org/">Browserify</a> also made it simple to separate out my code into modules. So I&#39;m glad I spent time learning about it before the competition.</p>
+
+<p>Testing my code was also easy using <a href="https://github.com/shakyShane/browser-sync">browser-sync</a>. I could load the game on a local server and access it with any device on my local network. If you haven&#39;t seen if before, you should check it out as it makes developing any web application simple.</p>
+
+<p>Spending time before the competition building a <a href="https://github.com/Eruant/phaser-boilerplate">boilerplate</a> really helped me. It meant that I could jump straight into developing my game. No need to set up a local server or load in the games libraries. Just a simple <code>git clone</code> and I was off.</p>
+
+<p>I got to play with my <a href="http://www.korg.com/us/products/dj/kaossilator_pro_plus/">kaossilator</a> to generate the sounds. I almost used it for the music too, but I ran out of time, so added a few clips together with <a href="https://www.apple.com/uk/mac/garageband/">Garage band</a>. I&#39;m getting more interested in music production, so any excuse to play is always good.</p>
+
+<h2>What could have gone better</h2>
+
+<p>Although the game was finished, it wasn&#39;t as exciting as it could have been. I would have liked to add some AI, so something to make it more challenging. The game just ended up being lots of linked up rooms with keys to find.</p>
+
+<p>There were some collision issues that I didn&#39;t manage to solve. Some of it could be down to the framework I used, but I suspect I missed some vital element. Once I&#39;ve worked out what was missing, I&#39;m sure it will be clear. Bugs always are.</p>
+
+<p>The map I made was quite big, which was a good thing. I felt like I could have made filled it more, but time was against me. Having mobs or other AI would have helped with variety, so maybe the size the game ended up with was good.</p>
+
+<h2>Conclusions</h2>
+
+<p>At the end of the day I got out of the weekend what I wanted. I&#39;ve got another game under my belt, and I felt like I&#39;ve learnt a little more about game development. That&#39;s the main reason why I enter <a href="http://www.ludumdare.com/compo/">Ludum Dare</a>. Now I will challenge you all to do the same.</p>
+
+<p>Voting lasts for another few weeks, lets hope I get a good ranking.</p>
 
 <p><a href="http://www.ludumdare.com/compo/ludum-dare-29/?action=preview&amp;uid=14756">Play the game</a></p>
 
@@ -128,13 +148,11 @@
 <div class="pagination">
   <h2>More Articles</h2>
   
-  <a href="/blog/2014/04/21/attack-from-above/">Previous: Attack from above</a>
+  <a href="/blog/2014/04/29/ludum-dare-29/">Previous: Ludum Dare 29</a>
   
 
   <a href="#top">Back to top</a>
 
-  
-  <a href="/blog/2014/05/01/ludum-dare-29-post-mortem/">Next: Ludum Dare 29 Post Mortem</a>
   
 </div>
 
