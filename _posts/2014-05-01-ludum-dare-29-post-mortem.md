@@ -33,7 +33,7 @@ The map I made was quite big, which was a good thing. I felt like I could have m
 
 ## Conclusions
 
-At the end of the day I got out of the weekend what I wanted. I've got another game under my belt, and I felt like I've learnt a little more about game development. That's the main reason why I enter [Ludum Dare][ludum]. Now I will challenge you all to do the same.
+At the end of the day I got out of the weekend what I wanted. I've got another game under my belt, and I felt like I've learnt a little more about game development. That's the main reason why I enter [Ludum Dare][ludum]. Now I will challenge you all to do the same. Entering [Ludum Dare][ludum] is one of the best ways to improve your code quickly.
 
 Voting lasts for another few weeks, lets hope I get a good ranking.
 
