@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>/blog/2014/05/01/ludum-dare-29-post-mortem/</loc>
+    <lastmod>2014-05-01T21:00:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/04/28/ludum-dare-29/</loc>
+    <lastmod>2014-04-28T00:56:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/04/21/attack-from-above/</loc>
+    <lastmod>2014-04-21T22:29:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/03/14/testing_first/</loc>
+    <lastmod>2014-03-14T21:20:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/03/09/mini-ludum-dare-50-announced/</loc>
+    <lastmod>2014-03-09T09:05:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/03/06/time-to-document/</loc>
+    <lastmod>2014-03-06T13:00:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/03/01/phaser-introduction/</loc>
+    <lastmod>2014-03-01T11:45:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/02/24/gulp-introduction/</loc>
+    <lastmod>2014-02-24T13:00:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/02/22/one-game-per-week/</loc>
+    <lastmod>2014-02-22T00:00:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2014/02/21/gulp/</loc>
+    <lastmod>2014-02-21T20:37:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2013/04/29/ludum-dare-26/</loc>
+    <lastmod>2013-04-29T19:00:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2012/12/17/ludum-dare-25/</loc>
+    <lastmod>2012-12-17T18:00:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2012/12/08/ludum-dare-25-warm-up/</loc>
+    <lastmod>2012-12-08T18:00:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/2012/08/27/ludum-dare-24/</loc>
+    <lastmod>2012-08-27T19:00:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>/404.html</loc>
+    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>/games/</loc>
+    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+</urlset>
