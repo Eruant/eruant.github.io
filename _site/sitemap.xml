@@ -4,6 +4,12 @@
   
   
   <url>
+    <loc>/blog/2014/05/17/ludum-dare-29-best-games/</loc>
+    <lastmod>2014-05-17T16:00:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>/blog/2014/05/01/ludum-dare-29-post-mortem/</loc>
     <lastmod>2014-05-01T21:00:00+01:00</lastmod>
     <priority>0.8</priority>
@@ -90,28 +96,28 @@
   
   <url>
     <loc>/404.html</loc>
-    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <lastmod>2014-05-17T16:41:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <lastmod>2014-05-17T16:41:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/games/</loc>
-    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <lastmod>2014-05-17T16:41:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2014-05-13T10:15:00+01:00</lastmod>
+    <lastmod>2014-05-17T16:41:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
