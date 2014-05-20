@@ -96,28 +96,28 @@
   
   <url>
     <loc>/404.html</loc>
-    <lastmod>2014-05-20T18:44:40+01:00</lastmod>
+    <lastmod>2014-05-20T18:50:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2014-05-20T18:44:40+01:00</lastmod>
+    <lastmod>2014-05-20T18:50:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/games/</loc>
-    <lastmod>2014-05-20T18:44:40+01:00</lastmod>
+    <lastmod>2014-05-20T18:50:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2014-05-20T18:44:40+01:00</lastmod>
+    <lastmod>2014-05-20T18:50:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

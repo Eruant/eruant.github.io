@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Working with slush"
-date: 2014-05-20 13:00:00
+date: 2014-05-21 13:00:00
 categories: blog
 description: "Introducing the Phaser Template"
 tags:
