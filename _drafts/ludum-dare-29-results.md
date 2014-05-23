@@ -8,7 +8,7 @@ tags:
   - ludumdare
 ---
 
-So the results are in...
+So the results are in and I'm happy with my overall place of 340!
 
 
 Overall: 340 / 2497.
