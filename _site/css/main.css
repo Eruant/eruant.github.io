@@ -162,6 +162,11 @@ ul.nav {
   text-decoration: none;
 }
 
+table {
+  min-width: 200px;
+  text-align: center;
+}
+
 @media screen and (min-width: 700px) {
 
   body {
