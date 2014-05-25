@@ -4,13 +4,13 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta description="Littleball is a place for games and game development. Aimed directly at the web and what it can deliver.">
 
-  <title>Ludum Dare 29 Results</title>
+  <title>Working with slush</title>
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/main.css">
   <link href='http://fonts.googleapis.com/css?family=Acme|Open+Sans' rel='stylesheet' type='text/css'>
 
-  <meta property="og:title" content="Ludum Dare 29 Results" />
-  <meta property="og:url" content="http://littleball.co.uk/blog/2014/05/24/ludum-dare-29-results/" />
+  <meta property="og:title" content="Working with slush" />
+  <meta property="og:url" content="http://littleball.co.uk/blog/2014/05/25/working-with-slush/" />
   <meta property="og:site_name" content="littleball." />
 
   <script>
@@ -74,11 +74,15 @@
 
   <div class="main">
     <div class="article">
-      <h2>Ludum Dare 29 Results</h2>
+      <h2>Working with slush</h2>
 <p class="meta">
-  24 May 2014
+  25 May 2014
   
-    | <span>ludumdare</span>
+    | <span>development</span>
+  
+    | <span>phaser</span>
+  
+    | <span>slush</span>
   
 </p>
 
@@ -99,84 +103,36 @@
 </div>
 
 <div class="post">
-<p>The results are in and I&#39;ve found out overall I came 340th out of 2497. My rating was in the top 14%, which I&#39;m quite happy with.</p>
+<p>A little while ago a wrote a post about <a href="http://phaser.io/">Phaser</a>, a JavaScript game framework. Since then been working on ways to improve my boilerplate. My current solution is <a href="https://github.com/slushjs/slush">slush</a>, a <a href="http://gulpjs.com/">gulp</a> based framework generator.</p>
 
-<p>Here are my other results:</p>
+<p>In my day job we were looking into different code generators. The main ones we looked at were for grunt, but my personal preference is to user gulp. Slush uses the basis of gulp to generate your projects from templates. It&#39;s very easy to pick up because a <code>slushfile</code> is identical to a <code>gulpfile</code>.</p>
 
-<table>
-  <tr>
-    <th>Rating</th>
-    <th>Category</th>
-    <th>Score</th>
-  </tr>
+<p>Today I&#39;m putting what I&#39;ve learn out there for everyone to benefit from. I&#39;ve taken my boilerplate code and transfered it for use as a template.</p>
 
-  <tr>
-    <td>Gold</td>
-    <td>Coolness</td>
-    <td>100%</td>
-  </tr>
+<p>To create your Phaser games you only need to create a new folder, run the slush template script and run gulp.</p>
 
-  <tr>
-    <td>128th</td>
-    <td>Audio</td>
-    <td>3.56</td>
-  </tr>
-  
-  <tr>
-    <td>257</td>
-    <td>Mood</td>
-    <td>3.39</td>
-  </tr>
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/directory
+<span class="nv">$ </span>mkdir myNewGame
+<span class="nv">$ </span><span class="nb">cd </span>myNewGame
+<span class="nv">$ </span>slush phaser-node
+</code></pre></div>
 
-  <tr>
-    <td>288</td>
-    <td>Graphics</td>
-    <td>3.61</td>
-  </tr>
+<p>Now there is already a Phaser template for slush, but I like to organise my code with node like modules. My template uses <a href="http://browserify.org/">browserify</a> to produce CommonJS like files. The other major difference is that I use <a href="http://www.browsersync.io/">BrowserSync</a> to server the files. This gives you the benefit of being able to easily test your files over your local Wi-Fi network.</p>
 
-  <tr>
-    <td>340</td>
-    <td>Overall</td>
-    <td>3.41</td>
-  </tr>
+<p>I still have a few ideas up my selves for features to add to the template, so it should continue to improve over time.</p>
 
-  <tr>
-    <td>483</td>
-    <td>Humour</td>
-    <td>2.35</td>
-  </tr>
-
-  <tr>
-    <td>531</td>
-    <td>Fun</td>
-    <td>3.05</td>
-  </tr>
-
-  <tr>
-    <td>723</td>
-    <td>Theme</td>
-    <td>3.07</td>
-  </tr>
-
-  <tr>
-    <td>1142</td>
-    <td>Innovation</td>
-    <td>2.18</td>
-  </tr>
-</table>
+<p>Here is the <a href="https://github.com/Eruant/slush-phaser-node">source files</a> for my template. I can&#39;t wait to see what you make!</p>
 
 </div>
 
 <div class="pagination">
   <h2>More Articles</h2>
   
-  <a href="/blog/2014/05/17/ludum-dare-29-best-games/">Previous: Best games of Ludum Dare 29</a>
+  <a href="/blog/2014/05/24/ludum-dare-29-results/">Previous: Ludum Dare 29 Results</a>
   
 
   <a href="#top">Back to top</a>
 
-  
-  <a href="/blog/2014/05/25/working-with-slush/">Next: Working with slush</a>
   
 </div>
 

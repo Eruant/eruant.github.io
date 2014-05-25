@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Working with slush"
-date: 2014-05-21 13:00:00
+date: 2014-05-25 14:20:00
 categories: blog
 description: "Introducing the Phaser Template"
 tags:
@@ -32,7 +32,7 @@ I still have a few ideas up my selves for features to add to the template, so it
 Here is the [source files][template] for my template. I can't wait to see what you make!
 
 [phaser]:       http://phaser.io/
-[slush]:        http://klei.github.io/slush/
+[slush]:        https://github.com/slushjs/slush
 [gulp]:         http://gulpjs.com/
 [template]:     https://github.com/Eruant/slush-phaser-node
 [browserify]:   http://browserify.org/
