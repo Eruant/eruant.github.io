@@ -22,7 +22,7 @@ To create your Phaser games you only need to create a new folder, run the slush 
 $ cd /path/to/your/directory
 $ mkdir myNewGame
 $ cd myNewGame
-$ slush phaser-browserify
+$ slush phaser-node
 {% endhighlight %}
 
 Now there is already a Phaser template for slush, but I like to organise my code with node like modules. My template uses [browserify][browserify] to produce CommonJS like files. The other major difference is that I use [BrowserSync][browsersync] to server the files. This gives you the benefit of being able to easily test your files over your local Wi-Fi network.
@@ -34,6 +34,6 @@ Here is the [source files][template] for my template. I can't wait to see what y
 [phaser]:       http://phaser.io/
 [slush]:        http://klei.github.io/slush/
 [gulp]:         http://gulpjs.com/
-[template]:     http://example.com/
+[template]:     https://github.com/Eruant/slush-phaser-node
 [browserify]:   http://browserify.org/
 [browsersync]:  http://www.browsersync.io/
