@@ -9,6 +9,8 @@ tags:
   - phaser
 ---
 
+**_Update_** - The techniques described in this article are still valid, but the code for this has been transformed into a [slush template][slush].
+
 I've always been interested in building games, and I've made a few quick ones for [Ludum Dare][ludum]. Previously I've made them using raw JavaScript, without any libraries. I've learn alot doing it this way, but it's time to get a helping hand. I'm trying out a game engine called [Phaser][phaser].
 
 There are lots of tutorials out there, and they are great for learning the basics. One thing I've noticed is that while they are great for demonstrating the simple games; for production games you may want to organise your code a little better.
@@ -270,3 +272,4 @@ Probably the best place to go now is the [Phaser examples][examples] page. There
 [napa]:         https://github.com/shama/napa
 [bowerPhaser]:  https://github.com/nDmitry/bower-phaser
 [examples]:     http://examples.phaser.io/
+[slush]:        http://littleball.co.uk/blog/2014/05/25/working-with-slush/#.U4Hu45RdWT4
