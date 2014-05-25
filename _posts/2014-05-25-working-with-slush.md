@@ -16,7 +16,13 @@ In my day job we were looking into different code generators. The main ones we l
 
 Today I'm putting what I've learn out there for everyone to benefit from. I've taken my boilerplate code and transfered it for use as a template.
 
-To create your Phaser games you only need to create a new folder, run the slush template script and run gulp.
+If this is the first time using it, you'll need to download it and set it as a global npm repository.
+
+{% highlight bash %}
+npm install -g slush-phaser-node
+{% endhighlight %}
+
+Once installed you can create your Phaser games by creating a new folder, run the slush template script and run gulp.
 
 {% highlight bash %}
 $ cd /path/to/your/directory
