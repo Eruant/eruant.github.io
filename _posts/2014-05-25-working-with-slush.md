@@ -35,7 +35,7 @@ Now there is already a Phaser template for slush, but I like to organise my code
 
 I still have a few ideas up my selves for features to add to the template, so it should continue to improve over time.
 
-Here is the [source files][template] for my template. I can't wait to see what you make!
+Here is the [source files][template] for my template, and the [npm package][npm]. I can't wait to see what you make!
 
 [phaser]:       http://phaser.io/
 [slush]:        https://github.com/slushjs/slush
@@ -43,3 +43,4 @@ Here is the [source files][template] for my template. I can't wait to see what y
 [template]:     https://github.com/Eruant/slush-phaser-node
 [browserify]:   http://browserify.org/
 [browsersync]:  http://www.browsersync.io/
+[npm]:          https://www.npmjs.org/package/slush-phaser-node
