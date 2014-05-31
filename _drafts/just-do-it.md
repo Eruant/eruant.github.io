@@ -9,3 +9,7 @@ tags:
 ---
 
 Game development is hard. You are not stupid. || description here ||
+
+- talk about the online community
+- talk about leaning
+- idea generation (war room)
