@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Just do it"
-date: 2014-06-01 09:00:00
+date: 2014-06-06 09:00:00
 categories: blog
 description: ""
 tags:
