@@ -15,5 +15,9 @@ I first got interested about building games at university. At that stage, I was 
 
 I've build several games, mainly for a games competition for called [Ludum Dare][ludum], but it's an area I really want to push into. I build games for two reasons 1) they are fun 2) if you can build a game, your can build pretty much anything your can imagine!
 
+My latest work uses a a framework called [phaser][phaser]. If you're looking for a quick setup, try my [slush phaser][slush] template.
+
 [bynd]:   http://bynd.com/
 [ludum]:  http://www.ludumdare.com/compo/
+[phaser]: http://phaser.io/
+[slush]:  https://www.npmjs.org/package/slush-phaser-node
