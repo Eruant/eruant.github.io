@@ -49,3 +49,6 @@ Monster.prototype.constructor = Monster;
 
 module.exports = Monster;
 {% endhighlight %}
+
+
+// TODO change monster class to have custom code
