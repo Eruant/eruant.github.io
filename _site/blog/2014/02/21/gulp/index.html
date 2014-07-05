@@ -41,6 +41,164 @@
       padding: 20px 2%;
       text-align: left;
     }
+
+    h1 a,
+    h2 a {
+      text-decoration: none;
+    }
+
+    h2 span {
+      font-size: 60%;
+      padding-top: 5px;
+      display: block;
+    }
+    p { margin: 1em 0; }
+
+    .title h1 {
+      display: inline;
+    }
+
+    .title .ad {
+      display: none;
+    }
+
+    .title .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 2%;
+      font-size: 200%;
+    }
+
+    .mbl {
+      display: block;
+    }
+
+    .mbl-inln {
+      display: inline;
+    }
+
+    .dskt {
+      display: none;
+    }
+
+    .footer {
+      width: 100%;
+      text-align: center;
+      background-color: #333;
+    }
+
+    .footer p { margin: 20px; }
+
+    .nav {
+      display: none;
+    }
+
+    .active .nav {
+      display: block;
+    }
+
+    ul.nav {
+      list-style: none;
+    }
+
+    .nav li {
+      background-color: #66ccf7;
+      border-bottom: solid 1px #3f4447;
+      padding: 5px 0;
+    }
+
+    .nav li:hover,
+    .nav li:active {
+      background-color: #08c;
+    }
+
+    .nav li:last-child {
+      border-bottom: none;
+    }
+
+    .nav li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    table {
+      min-width: 200px;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 700px) {
+
+      body {
+        display: table;
+      }
+
+      .nav {
+        display: block;
+      }
+
+      .nav li {
+        border-bottom: solid 1px #fff;
+        background-color: transparent;
+        padding: 0;
+      }
+
+      .nav li a {
+        color: #66ccf7;
+      }
+
+      .nav li:hover {
+        background-color: transparent;
+      }
+
+      .nav li:hover a {
+        color: #08c;
+      }
+
+      .title {
+        display: table-cell;
+        width: 200px;
+        height: 100%;
+        text-align: right;
+        z-index: 2;
+        padding: 20px 2%;
+      }
+
+      .title h1 {
+        display: block;
+      }
+
+      .title .ad {
+        display: inline-block;
+        width: 160px;
+        height: 600px;
+        margin-top: 20px;
+        text-align: right;
+      }
+
+      .main {
+        display: table-cell
+        /*width: 76%;*/
+      }
+
+      .main .article {
+        max-width: 800px;
+        min-width: 550px;
+      }
+
+      .footer {
+        max-width: 820px;
+        text-align: right;
+      }
+      
+      .mbl, .mbl-inln {
+        display: none;
+      }
+
+      .dskt {
+        display: block;
+      }
+    }
+
   </style>
 
   <meta property="og:title" content="Gulp" />
