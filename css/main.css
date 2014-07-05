@@ -46,6 +46,7 @@
 }
 
 /* Global Reset */
+
 h1 a,
 h2 a {
   text-decoration: none;
@@ -213,6 +214,7 @@ table {
   list-style-type: none;
   margin-bottom: 2em;
 }
+
 
 .posts span {
   color: #aaa;
