@@ -1,8 +1,11 @@
+/*globals requestAnimationFrame, mozRequestAnimationFrame, webkitRequestAnimationFrame, msRequestAnimationFrame*/
+
 (function (doc, win) {
 
   var app = {
 
     init: function () {
+      this.loadCSS();
       this.setExternalLinks();
 
       doc.getElementById('menuToggle').onmousedown = this.toggleMenu;
@@ -36,6 +39,39 @@
       } else {
         // add class
         nav.className += " active";
+      }
+    },
+
+    linkCallBack: function (urlArray) {
+
+      return function () {
+
+        var i, il, link, head;
+
+        il = urlArray.length;
+        head = doc.getElementsByTagName('head')[0];
+        for (i = 0; i < il; i++) {
+          link = doc.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = urlArray[i];
+          head.parentNode.insertBefore(link, head);
+        }
+      };
+    },
+
+    loadCSS: function () {
+
+      var syntax = this.linkCallBack([
+        '/css/main.css',
+        '/css/syntax.css',
+        'http://fonts.googleapis.com/css?family=Acme|Open+Sans'
+      ]),
+        raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+      if (raf) {
+        raf(syntax);
+      } else {
+        win.addEventListener('load', syntax);
       }
     }
 
