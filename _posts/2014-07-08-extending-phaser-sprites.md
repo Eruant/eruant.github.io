@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Extending Phaser Sprites"
-date: 2014-06-26 18:00:00
+date: 2014-07-08 12:00:00
 categories: blog
 description: "How to create a custom sprite for use within Phaser"
 tags:
@@ -42,13 +42,26 @@ var Phaser = require('phaser');
 
 var Monster = function (x, y, texture) {
   Phaser.Sprite.call(this, game, x, y, texture);
+
+  // add custom animations
+  this.animations.add('stand', [0, 1], 20, true);
+  this.animations.add('run', [2, 3, 4, 5], 20, true);
+  this.animations.add('walk', [6, 7, 8, 9], 20, true);
+  this.animations.play('stand');
 };
 
 Monster.prototype = Object.create(Phaser.Sprite.prototype);
 Monster.prototype.constructor = Monster;
 
+Monster.prototype = {
+
+  customFunction: function () {
+    // custom function code
+  }
+
+};
+
 module.exports = Monster;
 {% endhighlight %}
 
-
-// TODO change monster class to have custom code
+Now that you know how to extend your sprites, you can save lots of duplicated code. Just start with a monster class that has basic actions, and extend it for different mosters. Remember, if you need to share a function just add it to a sprite that the shared classes will inherit from.

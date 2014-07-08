@@ -4,6 +4,12 @@
   
   
   <url>
+    <loc>/blog/2014/07/08/extending-phaser-sprites/</loc>
+    <lastmod>2014-07-08T13:00:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>/blog/2014/05/25/working-with-slush/</loc>
     <lastmod>2014-05-25T15:20:00+01:00</lastmod>
     <priority>0.8</priority>
@@ -108,28 +114,28 @@
   
   <url>
     <loc>/404.html</loc>
-    <lastmod>2014-06-11T16:58:11+01:00</lastmod>
+    <lastmod>2014-07-08T11:59:24+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2014-06-11T16:58:11+01:00</lastmod>
+    <lastmod>2014-07-08T11:59:24+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/games/</loc>
-    <lastmod>2014-06-11T16:58:11+01:00</lastmod>
+    <lastmod>2014-07-08T11:59:24+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2014-06-11T16:58:11+01:00</lastmod>
+    <lastmod>2014-07-08T11:59:24+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
