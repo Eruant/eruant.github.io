@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entering the third dimension"
-data: 2014-09-22 09:00:00
+date: 2014-09-22 09:00:00
 category: blog
 description: "Learning blender and three"
 tags:
