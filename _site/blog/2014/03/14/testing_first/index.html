@@ -346,26 +346,24 @@ The main reason why I have written this, is to work out what I want to create. I
 
 <p>The first stage is to describe what we are testing, and let mocha find the files we need to test.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;An instance of the Car class&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;An instance of the Car class&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
   <span class="kd">var</span> <span class="nx">should</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;should&#39;</span><span class="p">),</span>
     <span class="nx">Car</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./path/to/Car&#39;</span><span class="p">);</span>
 
   <span class="c1">// do some tests</span>
 
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>This should be simple enough for you to read. It &quot;describes&quot; what we are trying to test. You should also see that I&#39;ve included <code>should</code> and <code>Car</code>. The <code>Car</code> is the module we are testing, and <code>should</code> lets us describe the tests in a easy to read format.</p>
 
 <p>Lets replace our comment with our first test.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should throw an error if an ID is not set&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should throw an error if an ID is not set&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">should</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">();</span>
   <span class="p">}).</span><span class="k">throw</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>A test has a statement <code>it()</code>, which adds a description of what it should do. In this test anything inside the <code>should()</code> function is evaluated, and the result is passed on to the next link in the chain.</p>
 
@@ -373,27 +371,25 @@ The main reason why I have written this, is to work out what I want to create. I
 
 <p>Next lets test to see what we would expect to happen if we did set an ID.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should set the ID of the car&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should set the ID of the car&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s1">&#39;myCar&#39;</span><span class="p">);</span>
   <span class="nx">should</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">equal</span><span class="p">(</span><span class="s1">&#39;myCar&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>You may notice a pattern here. We set something up, and then test to see that it should match an answer we give it.</p>
 
 <p>You can write lots of tests, that do different things. Here are just a few examples.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">should</span><span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">4</span><span class="p">).</span><span class="nx">equal</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">should</span><span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">4</span><span class="p">).</span><span class="nx">equal</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 <span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">4</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 <span class="nx">should</span><span class="p">({}).</span><span class="nx">be</span><span class="p">.</span><span class="nx">an</span><span class="p">.</span><span class="nx">instanceOf</span><span class="p">(</span><span class="nb">Object</span><span class="p">);</span>
 <span class="nx">should</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="nx">be</span><span class="p">.</span><span class="nx">above</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 <span class="nx">should</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">above</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
-<span class="nx">should</span><span class="p">(</span><span class="nb">Object</span><span class="p">).</span><span class="nx">exist</span><span class="p">();</span>
-</code></pre></div>
+<span class="nx">should</span><span class="p">(</span><span class="nb">Object</span><span class="p">).</span><span class="nx">exist</span><span class="p">();</span></code></pre></div>
 
 <p>Back to our <code>Car</code> class, we want to set a colour for the car. We might want to set this on the constructor, as well as having it&#39;s own method.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should default to red&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should default to red&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s1">&#39;myCar&#39;</span><span class="p">);</span>
   <span class="nx">should</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">colour</span><span class="p">).</span><span class="nx">equal</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
 <span class="p">});</span>
@@ -407,12 +403,11 @@ The main reason why I have written this, is to work out what I want to create. I
   <span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s1">&#39;myCar&#39;</span><span class="p">);</span>
   <span class="nx">car</span><span class="p">.</span><span class="nx">setColour</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span>
   <span class="nx">should</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">colour</span><span class="p">).</span><span class="nx">equal</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Finally we should test the fuel tank.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should have a fuel tank, which defaults to 100&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should have a fuel tank, which defaults to 100&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s1">&#39;myCar&#39;</span><span class="p">);</span>
   <span class="nx">should</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">tankSize</span><span class="p">).</span><span class="nx">be</span><span class="p">.</span><span class="nx">an</span><span class="p">.</span><span class="nx">instanceOf</span><span class="p">(</span><span class="nb">Number</span><span class="p">).</span><span class="nx">and</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
 <span class="p">});</span>
@@ -437,8 +432,7 @@ The main reason why I have written this, is to work out what I want to create. I
   <span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s1">&#39;myCar&#39;</span><span class="p">);</span>
   <span class="nx">car</span><span class="p">.</span><span class="nx">fillFuelTank</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span>
   <span class="nx">should</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">fuel</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">above</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">tankSize</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Each test is designed to do one thing. The more tests you add, the more robust your code should be. However if you spend all of your time writing tests, you will end up wasting your time. I can&#39;t give you a magic fix for how many tests you should write. You should at least test the methods that will be available outside of this module.</p>
 
@@ -446,19 +440,17 @@ The main reason why I have written this, is to work out what I want to create. I
 
 <p>Okay, so a test is quite useless without something to run it with, so lets set up our test suit. Make sure that you have a simple <code>package.json</code> file.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;test-example&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Then we need to install our dependencies:</p>
 
-<div class="highlight"><pre><code class="bash">npm install --save-dev mocha should
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save-dev mocha should</code></pre></div>
 
 <p>Last of all we need to add a test call to run mocha:</p>
 
-<div class="highlight"><pre><code class="json"><span class="p">{</span>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;test-example&quot;</span><span class="p">,</span>
   <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;mocha&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.18.0&quot;</span><span class="p">,</span>
@@ -467,16 +459,14 @@ The main reason why I have written this, is to work out what I want to create. I
   <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;node ./node_modules/.bin/mocha --reporter spec&quot;</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>And finally run the test</p>
 
-<div class="highlight"><pre><code class="bash">npm <span class="nb">test</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm <span class="nb">test</span></code></pre></div>
 
 <p>If all has gone well, you should see an output like this.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">An instance of the Car class
+<div class="highlight"><pre><code class="language-text" data-lang="text">An instance of the Car class
   1) should throw an error if an ID is not set
   2) should set the ID of the car
   3) should default to red
@@ -499,42 +489,38 @@ The main reason why I have written this, is to work out what I want to create. I
 </code></pre></div>
 <p>The list of errors goes on. Let me reassure you that the errors are a good thing. We know what we need to do to fix them, so lets get coding. The first test failed because we didn&#39;t throw an error.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Car: An ID must be set&#39;</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Try the test again, and you should see that the test now passes 1, and fails the other 9. So lets continue. The next test was seeing if an <code>id</code> has been set.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Car: An ID must be set&#39;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Now we have passed 2 and failed 8, so we must continue on. I will fix the next two tests, by adding a default to red, and also being able to send in a new colour.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">colour</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">colour</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Car: An ID must be set&#39;</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">colour</span> <span class="o">=</span> <span class="nx">colour</span> <span class="o">||</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Now it&#39;s asking for a function to change the colour</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setColour</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">colour</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setColour</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">colour</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">colour</span> <span class="o">=</span> <span class="nx">colour</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>As you can see, building the code is now simple. All I should need to do is get all the tests to pass. I will leave that as an exercise for you to do. You may also notice other issues that you did not think about while you wrote your tests. For example, I realise that I did not test for calling the <code>setColour</code> function without an argument. That could come back to haunt me later. We should go back and add a test just to be safe.</p>
 
@@ -542,10 +528,9 @@ The main reason why I have written this, is to work out what I want to create. I
 
 <p>Now that you should know how to build your tests, you can add a badge to your site letting people know of the build status. This can be done through a service called <a href="https://travis-ci.org">Travis</a>. You will sign up for an account and let it get access to your code. We can then add a <code>.travis.yml</code> file to the root of our repository, and let Travis run our tests.</p>
 
-<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">language</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node_js</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">language</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node_js</span>
 <span class="l-Scalar-Plain">node_js</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="s">&quot;0.11&quot;</span>
-</code></pre></div>
+  <span class="p-Indicator">-</span> <span class="s">&quot;0.11&quot;</span></code></pre></div>
 
 <p>Travis will then call <code>npm test</code> and see if the build passes or fails. It will then give you a badge to put on your site. Like this one:</p>
 
@@ -575,7 +560,7 @@ The main reason why I have written this, is to work out what I want to create. I
           <a href="https://github.com/Eruant"><i class="icon-github"></i> Github</a> |
           <a href="https://twitter.com/mrGale"><i class="icon-twitter"></i> Twitter</a> |
         </span>
-        &copy; littleball. 2011-2014
+        &copy; littleball. 2011-2015
       </p>
     </div>
   </div>

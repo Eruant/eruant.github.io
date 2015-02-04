@@ -326,25 +326,22 @@
 
 <p>Start by creating you constructor as a regular function.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">CustomSprite</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">CustomSprite</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span></code></pre></div>
 
 <p>Next we need to set the prototype to inherit the <code>Phaser.Sprite</code> object.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">CustomSprite</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
-<span class="nx">CustomSprite</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">CustomSprite</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">CustomSprite</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="nx">CustomSprite</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">CustomSprite</span><span class="p">;</span></code></pre></div>
 
 <p>Finally we need to send our variables to the parent object. I have also added some extra options for setting the position and image texture.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">CustomSprite</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">texture</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">CustomSprite</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">texture</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">game</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">texture</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>Currently our new sprite does exactly the same as the original sprite. Feel free to add custom options or functions. Below is an example using CommonJS.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./game&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./game&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">Phaser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;phaser&#39;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">Monster</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">texture</span><span class="p">)</span> <span class="p">{</span>
@@ -368,8 +365,7 @@
 
 <span class="p">};</span>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Monster</span><span class="p">;</span>
-</code></pre></div>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Monster</span><span class="p">;</span></code></pre></div>
 
 <p>Now that you know how to extend your sprites, you can save lots of duplicated code. Just start with a monster class that has basic actions, and extend it for different mosters. Remember, if you need to share a function just add it to a sprite that the shared classes will inherit from.</p>
 
@@ -395,7 +391,7 @@
           <a href="https://github.com/Eruant"><i class="icon-github"></i> Github</a> |
           <a href="https://twitter.com/mrGale"><i class="icon-twitter"></i> Twitter</a> |
         </span>
-        &copy; littleball. 2011-2014
+        &copy; littleball. 2011-2015
       </p>
     </div>
   </div>

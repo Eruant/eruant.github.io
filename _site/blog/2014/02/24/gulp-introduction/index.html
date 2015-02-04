@@ -354,7 +354,7 @@
 <h2>Installation</h2>
 
 <p>Installation is really simple, as long as you have <a href="http://nodejs.org/">node</a> installed.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">npm install -g gulp
+<div class="highlight"><pre><code class="language-text" data-lang="text">npm install -g gulp
 </code></pre></div>
 <h2>Setup</h2>
 
@@ -363,7 +363,7 @@
 <h3>New projects</h3>
 
 <p>Add a file called <code>package.json</code> with a field for <code>devDependencies</code>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
   &quot;name&quot;: &quot;my-new-project&quot;,
   &quot;version&quot;: &quot;0.0.1&quot;,
   &quot;devDependencies&quot;: {
@@ -371,25 +371,24 @@
 }
 </code></pre></div>
 <p>To add gulp or any gulp plugins just run the following command.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">npm install --save-dev gulp
+<div class="highlight"><pre><code class="language-text" data-lang="text">npm install --save-dev gulp
 </code></pre></div>
 <p>Using the tag <code>--save-dev</code> will add this dependency to the package file, so that other developers can set up their copys of the repository the same as you.</p>
 
 <h3>Existing projects</h3>
 
 <p>It should be quick and easy setting up a new project, just run the following command:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">npm install
+<div class="highlight"><pre><code class="language-text" data-lang="text">npm install
 </code></pre></div>
 <h2>Gulpfile.js</h2>
 
 <p>Each project is controlled by a file named <code>gulpfile.js</code>. Here is a really simple file.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
 
 <span class="nx">gulp</span><span class="p">.</span><span class="nx">taks</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Running the default command&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Once you&#39;ve added the file running <code>gulp</code> will run this file. If you send in a command, it will look for it and run it. Otherwise it will look for a <code>default</code> task and run that. In the case above you would see &quot;Running the default command&quot; appear in the command line.</p>
 
@@ -437,7 +436,7 @@
           <a href="https://github.com/Eruant"><i class="icon-github"></i> Github</a> |
           <a href="https://twitter.com/mrGale"><i class="icon-twitter"></i> Twitter</a> |
         </span>
-        &copy; littleball. 2011-2014
+        &copy; littleball. 2011-2015
       </p>
     </div>
   </div>

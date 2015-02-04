@@ -334,45 +334,41 @@
 
 <p>To organise my code I&#39;m using <a href="http://browserify.org/">browserify</a> to split my code into modules. I&#39;ve mentioned in a previous post that I&#39;m using <a href="http://gulpjs.com/">gulp</a> to manage tasks like compiling my code, so here is how I&#39;ve set that up</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;script-compile&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;script-compile&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/js/base.js&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">browserify</span><span class="p">({</span>
       <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span>
     <span class="p">})</span>
     <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39;bundle.js&#39;</span><span class="p">))</span>
     <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;bin/js&#39;</span><span class="p">));</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>This code takes my <code>base.js</code> file, looks for any dependencies and adds them. Renames the file to <code>bundle.js</code> and saves it to my output folder.</p>
 
 <p>Inside the <code>base.js</code> file we can load in the modules we require.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Phaser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;phaser/phaser&#39;</span><span class="p">),</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Phaser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;phaser/phaser&#39;</span><span class="p">),</span>
   <span class="nx">boot</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./scenes/boot.js&#39;</span><span class="p">),</span>
   <span class="nx">preload</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./scenes/preload.js&#39;</span><span class="p">),</span>
   <span class="nx">mainMenu</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./scenes/mainMenu.js&#39;</span><span class="p">),</span>
-  <span class="nx">level</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./scenes/level.js&#39;</span><span class="p">);</span>
-</code></pre></div>
+  <span class="nx">level</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./scenes/level.js&#39;</span><span class="p">);</span></code></pre></div>
 
 <p>This is trying to load our modules: <code>Phaser</code> from our <code>node_modules</code> and <code>boot</code>, <code>preload</code>, <code>mainMenu</code> and <code>level</code> from our own JavaScript folder.</p>
 
 <p>This is where I ran into my fist issue, Phaser isn&#39;t a node module. I found a great package called <a href="https://github.com/shama/napa">napa</a>, which allows you to use any repository as a node module. To install it simpley run the command</p>
 
-<div class="highlight"><pre><code class="bash">npm install --save-dev napa
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save-dev napa</code></pre></div>
 
 <p>Then update your <code>package.json</code> to configure what scripts to run</p>
 
-<div class="highlight"><pre><code class="json"><span class="p">{</span>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;install&quot;</span><span class="p">:</span> <span class="s2">&quot;napa&quot;</span>
   <span class="p">},</span>
   <span class="nt">&quot;napa&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;phaser&quot;</span><span class="p">:</span> <span class="s2">&quot;nDmitry/bower-phaser&quot;</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>This then adds and repositories in the <code>napa</code> object to your node modules folder. So that you can install them with <code>npm install</code>. You&#39;ll notice I found a <a href="https://github.com/nDmitry/bower-phaser">repository</a> with a node friendly copy of Phaser.</p>
 
@@ -380,15 +376,14 @@
 
 <p>Back to the <code>base.js</code> file we can now kick off our <a href="http://phaser.io/">Phaser Game</a></p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
 
 <span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;boot&#39;</span><span class="p">,</span> <span class="nx">boot</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;preload&#39;</span><span class="p">,</span> <span class="nx">preload</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;mainMenu&#39;</span><span class="p">,</span> <span class="nx">mainMenu</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="nx">level</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-<span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;boot&#39;</span><span class="p">);</span>
-</code></pre></div>
+<span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;boot&#39;</span><span class="p">);</span></code></pre></div>
 
 <p>We create a new Phaser game that is 480 pixels wide and 320 pixels high. Phaser will create a canvas that uses WebGL if possible, otherwise it falls back to the 2D context.</p>
 
@@ -419,7 +414,7 @@
 
 <p>Let&#39;s take a look inside an example scene</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">preload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// load things</span>
   <span class="p">},</span>
@@ -429,8 +424,7 @@
   <span class="nx">update</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// animate things</span>
   <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>The three main functions Phaser looks for are <code>preload</code>, <code>create</code> and <code>update</code>. They are optional, so you won&#39;t see them in every scene. For example only the boot and preloader scenes in my example will need the <code>preload</code> function, because after that we should have already loaded all the resources we need.</p>
 
@@ -440,7 +434,7 @@
 
 <p>Let&#39;s take a closer look at the <code>boot.js</code> file.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">preload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="s1">&#39;loadingBar&#39;</span><span class="p">,</span> <span class="s1">&#39;assets/loadingBar.png&#39;</span><span class="p">);</span>
   <span class="p">},</span>
@@ -449,8 +443,7 @@
     <span class="k">this</span><span class="p">.</span><span class="nx">stage</span><span class="p">.</span><span class="nx">disableVisibilityChange</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;preloader&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>The whole file is quite simple, with two functions. The <code>preload</code> function is nice a simple, it just loads our loading bar. Remember we want the preloader to show as quickly as possible, so don&#39;t load all your assets here.</p>
 
@@ -460,7 +453,7 @@
 
 <p>The scene we told our code to go to is <code>preload.js</code>. Lets take a look at what functions we will need.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Phaser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;phaser/phaser&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Phaser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;phaser/phaser&#39;</span><span class="p">);</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">preload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -471,19 +464,17 @@
   <span class="nx">startMainMenu</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
   <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>The first function is where we will show our loading bar, and load in the rest of the assets. The following code will goes inside our <code>preload</code> function.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">loadingBar</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">world</span><span class="p">.</span><span class="nx">centerX</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">world</span><span class="p">.</span><span class="nx">centerY</span><span class="p">,</span> <span class="s1">&#39;loadingBar&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">loadingBar</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">world</span><span class="p">.</span><span class="nx">centerX</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">world</span><span class="p">.</span><span class="nx">centerY</span><span class="p">,</span> <span class="s1">&#39;loadingBar&#39;</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">loadingBar</span><span class="p">.</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">setTo</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">setPreloadSprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">loadingBar</span><span class="p">);</span>
 
 <span class="c1">// all of the assets we want to load for the game</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="s1">&#39;menuBackground&#39;</span><span class="p">,</span> <span class="s1">&#39;assets/menuBackground.png&#39;</span><span class="p">);</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="s1">&#39;gameSprites&#39;</span><span class="p">,</span> <span class="s1">&#39;assets/gameSprites.png&#39;</span><span class="p">);</span>
-</code></pre></div>
+<span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="s1">&#39;gameSprites&#39;</span><span class="p">,</span> <span class="s1">&#39;assets/gameSprites.png&#39;</span><span class="p">);</span></code></pre></div>
 
 <p>First we set <code>this.loadingBar</code> as a sprite. Aligning it to the center of the screen. Initially the sprites top left corner will sit in the middle of the screen, which is not what we what. We can change it&#39;s anchor point to be set to the center. The figures are a percentage so that <code>0</code> is the far left, and <code>1</code> is the far right (or top to bottom). Once we have set the anchor, we then tell Phaser to use this as a preloader. It will do its magic and we will see a loading bar fill up from our static image.</p>
 
@@ -491,12 +482,11 @@
 
 <p>Inside the <code>create</code> function we will add the following:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">tween</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">tween</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">loadingBar</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">tween</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">tween</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">loadingBar</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">to</span><span class="p">({</span>
     <span class="nx">alpha</span><span class="o">:</span> <span class="mi">0</span>
   <span class="p">},</span> <span class="mi">1000</span><span class="p">,</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Easing</span><span class="p">.</span><span class="nx">Linear</span><span class="p">.</span><span class="nx">None</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="nx">tween</span><span class="p">.</span><span class="nx">onComplete</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">startMainMenu</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-</code></pre></div>
+<span class="nx">tween</span><span class="p">.</span><span class="nx">onComplete</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">startMainMenu</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span></code></pre></div>
 
 <p>Once we get to the <code>create</code> function, all of our assets have loaded. We could have gone straight to our next scene, but to add some style lets make the loading bar animate out. To do this we have added a tween that changes the alpha (visibility) to 0 over 1 second (1000 ms).</p>
 
@@ -504,8 +494,7 @@
 
 <p>The <code>startMainMenu</code> function is the simplest of them all. In fact we have already seen the code from the previous scene.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;mainMenu&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;mainMenu&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span></code></pre></div>
 
 <p>That&#39;s the preloader complete.</p>
 
@@ -513,7 +502,7 @@
 
 <p>The main menu shows lots of code we have already seen. Adding sprites, tweens and listening for animations to complete.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">create</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">tween</span><span class="p">,</span> <span class="nx">style</span><span class="p">;</span>
 
@@ -543,8 +532,7 @@
   <span class="nx">startGame</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>The two new parts of this code that we havent&#39; yet covered are the text and the click / tap events.</p>
 
@@ -588,7 +576,7 @@
           <a href="https://github.com/Eruant"><i class="icon-github"></i> Github</a> |
           <a href="https://twitter.com/mrGale"><i class="icon-twitter"></i> Twitter</a> |
         </span>
-        &copy; littleball. 2011-2014
+        &copy; littleball. 2011-2015
       </p>
     </div>
   </div>

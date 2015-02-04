@@ -328,7 +328,7 @@
 
 <p>There are many tools out there for compiling your documentation. The one I will be coving in this article is called <a href="https://github.com/senchalabs/jsduck">JSDuck</a>. First things first we need some files to document. Here is an example class for a player call <code>Person.js</code>.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
@@ -346,12 +346,11 @@
   <span class="k">return</span> <span class="nx">oldName</span> <span class="o">+</span> <span class="s2">&quot; has changed their name to &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
 <span class="p">};</span>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">;</span>
-</code></pre></div>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">;</span></code></pre></div>
 
 <p>Currently this file will not produce very good documentation, so lets change that by adding some comments at the top of the file.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="cm">/**</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
 <span class="cm"> * @class Person</span>
 <span class="cm"> * A human being in code form.</span>
 <span class="cm"> *</span>
@@ -373,8 +372,7 @@
   <span class="p">}</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>Now the first thing you will notice is that all the code is wrapped in a comment. This is important because you don&#39;t want to change the way the code executes.</p>
 
@@ -388,7 +386,7 @@
 
 <p>Adding a documentation to a method is very similar to the constructor. Let&#39;s look at how we would document the <code>sayHello</code> method.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="cm">/**</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
 <span class="cm"> * @method sayHello</span>
 <span class="cm"> * Returns a personal greeting from this person</span>
 <span class="cm"> *</span>
@@ -396,19 +394,17 @@
 <span class="cm"> */</span>
 <span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s1">&#39;Hi I\&#39;m &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>You&#39;ll notice a new option displayed here, which is the return value. It&#39;s format is similar to the parameters.</p>
 
 <p>If you want JSDuck to ignore any parts of your code, you can let it know with the <code>@ignore</code> tag.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="cm">/**</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
 <span class="cm"> * @ignore</span>
 <span class="cm"> * Exporting the module (the class has already been documented above)</span>
 <span class="cm"> */</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">;</span>
-</code></pre></div>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">;</span></code></pre></div>
 
 <h2>Creating the documentation</h2>
 
@@ -416,13 +412,11 @@
 
 <p>First things first you need to install JSDuck. If you have ruby on your machine you can install it with the following command.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="o">[</span>sudo<span class="o">]</span> gem install jsduck
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>sudo<span class="o">]</span> gem install jsduck</code></pre></div>
 
 <p>Once that is done, you can generate your documentation by sending in your source directory. I also specify the output directory with into a folder called docs.</p>
 
-<div class="highlight"><pre><code class="bash">jsduck src/js src/js --output docs
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jsduck src/js src/js --output docs</code></pre></div>
 
 <p>Now if you look in your docs folder, you should see lots of files. Open the <code>index.html</code> file in your browser to see the documentation.</p>
 
@@ -434,7 +428,7 @@
 
 <p>First of all we need a configuration file names <code>guides.json</code>. I&#39;ve put it in my src directory.</p>
 
-<div class="highlight"><pre><code class="json"><span class="p">[</span>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
   <span class="p">{</span>
     <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;My project name&quot;</span><span class="p">,</span>
     <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -446,12 +440,11 @@
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div>
+<span class="p">]</span></code></pre></div>
 
 <p>It&#39;s a simple file, that gives the guide a name, and a number of items (guides). I&#39;ve stored each guide in a folder called guides. Here is my folder structure.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">src</span><span class="o">/</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">src</span><span class="o">/</span>
   <span class="nx">guides</span><span class="p">.</span><span class="nx">json</span>
   <span class="nx">guides</span><span class="o">/</span>
     <span class="nx">getting_started</span><span class="o">/</span>
@@ -461,8 +454,7 @@
   <span class="nx">js</span><span class="o">/</span>
     <span class="nx">classes</span><span class="o">/</span>
       <span class="nx">Person</span><span class="p">.</span><span class="nx">js</span>
-      <span class="nx">Enemy</span><span class="p">.</span><span class="nx">js</span>
-</code></pre></div>
+      <span class="nx">Enemy</span><span class="p">.</span><span class="nx">js</span></code></pre></div>
 
 <p>You will notice that each guide has it&#39;s own folder with a <code>README.md</code> file inside. I&#39;ve also added an <code>icon.png</code> file.</p>
 
@@ -474,8 +466,7 @@
 
 <p>The last step is to run the build command with a <code>--guides</code> option.</p>
 
-<div class="highlight"><pre><code class="bash">jsduck src/js/ --title <span class="s2">&quot;My project&quot;</span> --guides src/guides.json --output docs
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jsduck src/js/ --title <span class="s2">&quot;My project&quot;</span> --guides src/guides.json --output docs</code></pre></div>
 
 <p>All of this may seem like a lot of work the first time you do it, but for me it&#39;s become part of the development process. The more you do it, the easier it becomes. In six months, you may be thankful for it.</p>
 
@@ -501,7 +492,7 @@
           <a href="https://github.com/Eruant"><i class="icon-github"></i> Github</a> |
           <a href="https://twitter.com/mrGale"><i class="icon-twitter"></i> Twitter</a> |
         </span>
-        &copy; littleball. 2011-2014
+        &copy; littleball. 2011-2015
       </p>
     </div>
   </div>

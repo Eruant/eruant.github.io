@@ -1,6 +1,6 @@
 name: littleball.
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 permalink: pretty
 paginate: 10
 gems:
